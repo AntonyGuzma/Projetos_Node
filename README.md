@@ -3,5 +3,5 @@ Projetos (tanto com JavaScript puro e para web, como também para web com Node, 
 
 ## Foram utilizados
 
-*Sqlite
-*Db Browser
+* Sqlite
+* Db Browser

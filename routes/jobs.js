@@ -18,12 +18,32 @@ router.post('/add', (req, res) => {
         new_job
     })
     .then(() => res.redirect('/'))
-    .catch(err => console.log('error'))
+    .catch(err => console.log(err))
 })
 
+
+//rota de teste
 router.get('/test', (req, res) => {
     res.send('deu certo')
 })
 
+//rota de envio
+router.get('/add', (req, res) => {
+    res.render('add')
+})
+
+//rota de detalhe da vaga
+router.get('/view/:id', (req, res) => {
+    Job.findOne({
+        where: {id: req.params.id}
+    })
+    .then(job => {
+        res.render('view',{
+            job
+        })
+    })
+    .catch(err => {console.log(err)})
+})
+  
 
 module.exports = router
